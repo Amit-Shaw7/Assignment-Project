@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./layout/navbar/Navbar";
+import HomePage from "./pages/home/HomePage";
+import { Toaster } from "react-hot-toast";
+import AllProduct from "./pages/products/AllProduct";
+import Form from "./components/form/Form";
+import ProductDetails from "./pages/products/ProductDetails";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route exact path="/" element={<HomePage />} />
+        <Route exact path="/products/all" element={<AllProduct />} />
+        <Route exact path="/signup" element={<Form type="signup" />} />
+        <Route exact path="/login" element={<Form type="login" />} />
+        <Route exact path="/products/edit/:productId" element={<Form type="edit" />} />
+        <Route exact path="/products/add" element={<Form type="add" />} />
+        <Route exact path="/products/:productId" element={<ProductDetails />} />
+      </Routes>
+      <Toaster position="top-center" />
+    </BrowserRouter>
   );
 }
 

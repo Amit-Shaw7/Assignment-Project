@@ -1,0 +1,182 @@
+@import "../../util.scss";
+
+.hero {
+    height: 90vh;
+    width: 100%;
+
+    >div {
+        background: url("../../assets/bg.png");
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1.7rem;
+        padding: 2rem 8rem;
+
+        >h1 {
+            color: black;
+            font: 900 2.5rem "Nunito";
+            letter-spacing: 1px;
+        }
+
+        >h3 {
+            font: 700 1.5rem "Urbanist";
+            letter-spacing: 0.5px;
+            color: $text;
+            width: 50%;
+        }
+
+        >button {
+            letter-spacing: 0.5px;
+            background-color: $text;
+            padding: 15px 40px;
+            border-radius: 2px;
+            font-size: 1.2rem;
+            color: white;
+
+            &:hover {
+                background-color: $textDark;
+                scale: 1.1;
+            }
+        }
+    }
+}
+
+.top-products {
+    min-height: 80vh;
+    width: 100%;
+    margin: 4rem 0px;
+
+    >.add-button{
+        background-color: $textLight;  
+        padding: 10px 30px;
+        width: 250px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        border-radius: 5px;
+        color: white;
+        transition: all ease-in-out 0.3s;
+        margin: auto;
+        margin-bottom: 1rem;
+
+        &:hover{
+            background-color: $text;
+
+        }
+    }
+    >h3 {
+        text-align: center;
+        margin: 4rem 0px;
+        font-size: 2rem;
+        text-decoration: underline;
+        text-decoration-color: $text;
+    }
+
+    >.buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 2rem;
+
+        >button {
+            padding: 10px 30px;
+            color: white;
+
+            &:hover {
+                background-color: $text;
+            }
+        }
+    }
+
+    >.products {
+        width: 100%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    >a {
+        color: $textDark;
+
+        display: grid;
+        place-content: center;
+        margin-top: 2rem;
+        text-decoration: underline;
+
+        &:hover {
+            scale: 1.2;
+        }
+    }
+}
+
+.grid-view {
+    flex-direction: row;
+}
+
+.list-view {
+    flex-direction: column;
+    // width: 70vw;
+    // height: 100px;
+}
+
+.selected{
+    background-color: $textDark;
+}
+.not-selected{
+    background-color: $textLight;
+}
+
+@media screen and (max-width : 1024px) {
+    .hero {
+        div {
+            padding: 2rem 4rem;
+        }
+    }
+}
+
+@media screen and (max-width : 768px) {
+    .hero {
+        div {
+            padding: 2rem 10px;
+            background: url("../../assets/bgmobile.png");
+            background-size: cover;
+            background-position: center;
+            align-items: center;
+            justify-content: flex-end;
+
+            >h3 {
+                width: 100%;
+                text-align: center;
+            }
+
+            >h1 {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    .top-products {
+        >.products {
+            gap: 0.5rem;
+        }
+    }
+}
+
+@media screen and (max-width : 425px) {
+    .top-products {
+        >.products {
+            gap: 0px;
+        }
+    }
+}
