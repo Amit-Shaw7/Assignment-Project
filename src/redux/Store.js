@@ -7,5 +7,5 @@ const Store = configureStore({
     }
 });
 
-export const host = "http://localhost:5000/api/v1";
+export const host = "https://store-api-444o.onrender.com/api/v1";
 export default Store;
