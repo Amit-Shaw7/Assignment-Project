@@ -8,6 +8,9 @@ import "./productDetails.scss";
 import { BiRupee } from "react-icons/bi";
 
 const ProductDetails = () => {
+    const Placeorder = () => {
+        toast.success("Order Placed Succesfully")
+    }
     const dispatch = useDispatch();
     const params = useParams();
     const { loading, productDetails, error } = useSelector(state => state.product);
@@ -52,7 +55,7 @@ const ProductDetails = () => {
                                 <p className='price'><span className='type'><BiRupee /> </span> {productDetails?.price}</p>
 
                             </div>
-                            <button className="buy">BUY NOW</button>
+                            <button onClick={Placeorder} className="buy">BUY NOW</button>
                         </div>
                     </div>
                 </div>
